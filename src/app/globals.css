@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) rotateX(8deg) rotateY(-14deg);
+  }
+  50% {
+    transform: translateY(-14px) rotateX(12deg) rotateY(-8deg);
+  }
+}
+
+@keyframes floatCardA {
+  0%, 100% {
+    transform: translate3d(0, 0, 55px);
+  }
+  50% {
+    transform: translate3d(0, -10px, 65px);
+  }
+}
+
+@keyframes floatCardB {
+  0%, 100% {
+    transform: translate3d(0, 0, 45px);
+  }
+  50% {
+    transform: translate3d(0, 10px, 58px);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinReverse {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.08);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(220%) skewX(-18deg);
+  }
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.scene-3d {
+  perspective: 1200px;
+}
+
+.book-3d {
+  transform-style: preserve-3d;
+  animation: floatSlow 6.5s ease-in-out infinite;
+  transition: transform 0.25s ease-out;
+}
+
+.card-3d-a {
+  animation: floatCardA 5.2s ease-in-out infinite;
+}
+
+.card-3d-b {
+  animation: floatCardB 6s ease-in-out infinite;
+}
+
+.spin-slow {
+  animation: spinSlow 16s linear infinite;
+}
+
+.spin-reverse {
+  animation: spinReverse 11s linear infinite;
+}
+
+.glow-orb {
+  animation: pulseGlow 7s ease-in-out infinite;
+}
+
+.shimmer-bar {
+  animation: shimmer 4.2s ease-in-out infinite;
+}
+
+.animate-fade-up {
+  animation: fadeUp 0.65s ease-out both;
+}
+
+.animate-fade-up-delay {
+  animation: fadeUp 0.85s ease-out 0.15s both;
+}
+
+@media print {
+  html, body {
+    display: none !important;
+    visibility: hidden !important;
+  }
+}
